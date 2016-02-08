@@ -1,0 +1,6 @@
+---
+- src: andrewrothstein.unarchive-deps
+- src: andrewrothstein.java
+- src: andrewrothstein.java-build-tools
+- src: andrewrothstein.python
+

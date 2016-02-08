@@ -1,0 +1,13 @@
+---
+# defaults file for couchdb-lucene
+couchdb_lucene_ver : '1.0.2'
+couchdb_lucene_mirror : 'https://github.com/rnewson/couchdb-lucene/archive'
+
+couchdb_lucene_conf_dir : 'indexes'
+couchdb_lucene_conf_host : 'localhost'
+couchdb_lucene_conf_port : 5985
+
+couchdb_lucene_conf_couchdb_url : 'http://localhost:5984/'
+
+couchdb_lucene_conf_logs_dir : 'logs'
+couchdb_lucene_conf_logs_maxfilesize : '5MB'

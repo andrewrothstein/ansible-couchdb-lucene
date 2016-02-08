@@ -1,0 +1,62 @@
+---
+# tasks file for couchdb-lucene
+- name: download src
+  get_url: >-
+    url={{couchdb_lucene_tgz_url}}
+    dest={{couchdb_lucene_target_tgz}}
+    owner=root
+    group=root
+    mode=0644
+
+- name: create /opt/couchdb-lucene-X.Y.Z-src
+  file: >-
+    path={{couchdb_lucene_src_dir}}
+    state=directory
+    owner=root
+    group=root
+    mode=0755
+    
+- name: unarchive to /opt/couchdb-lucene-X.Y.Z-src/couchdb-lucene-X.Y.Z
+  unarchive: >-
+    copy=no
+    src={{couchdb_lucene_target_tgz}}
+    dest={{couchdb_lucene_src_dir}}
+    owner=root
+    group=root
+    mode=0755
+    creates={{couchdb_lucene_build_dir}}
+
+- name: build...
+  command: mvn
+  args:
+    chdir: '{{couchdb_lucene_build_dir}}'
+    creates: '{{couchdb_lucene_install_tgz_path}}'
+
+- name: install...
+  unarchive: >-
+    copy=no
+    src={{couchdb_lucene_install_tgz_path}}
+    dest=/opt
+    owner=root
+    group=root
+    mode=0755
+    creates=/opt/{{couchdb_lucene_name}}
+
+- name: configure...
+  template: >-
+    src={{item}}.j2
+    dest=/opt/{{couchdb_lucene_name}}/conf/{{item}}
+    owner=root
+    group=root
+    mode=0644
+  with_items:
+    - couchdb-lucene.ini
+    - log4j.xml
+
+- name: create launcher script under /usr/local/bin
+  template: >-
+    src=launch-couchdb-lucene.j2
+    dest=/usr/local/bin/launch-couchdb-lucene
+    owner=root
+    group=root
+    mode=0755
