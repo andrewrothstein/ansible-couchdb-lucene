@@ -23,9 +23,10 @@ galaxy_info:
     - development
 
 dependencies:
+  - andrewrothstein.python
   - andrewrothstein.unarchive-deps
   - andrewrothstein.java
   - andrewrothstein.java-build-tools
-  - andrewrothstein.python
+
 
   
