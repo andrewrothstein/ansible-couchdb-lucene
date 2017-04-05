@@ -1,12 +1,11 @@
 ---
 # vars file for couchdb-lucene
 couchdb_lucene_name : 'couchdb-lucene-{{couchdb_lucene_ver}}'
-couchdb_lucene_tgz : 'v{{couchdb_lucene_ver}}.tar.gz'
-couchdb_lucene_tgz_url : '{{couchdb_lucene_mirror}}/{{couchdb_lucene_tgz}}'
+couchdb_lucene_src_tgz : '{{couchdb_lucene_name}}.tar.gz'
+couchdb_lucene_src_tgz_url : '{{couchdb_lucene_mirror}}/v{{couchdb_lucene_ver}}.tar.gz'
 
-couchdb_lucene_target_tgz : '/tmp/{{couchdb_lucene_name}}.tar.gz'
-couchdb_lucene_src_dir : '/opt/{{couchdb_lucene_name}}-src'
-couchdb_lucene_build_dir : '{{couchdb_lucene_src_dir}}/{{couchdb_lucene_name}}'
+couchdb_lucene_build_dir : '{{couchdb_lucene_parent_srcs_dir}}/{{couchdb_lucene_name}}'
 
 couchdb_lucene_install_tgz : 'couchdb-lucene-{{couchdb_lucene_ver}}-dist.tar.gz'
 couchdb_lucene_install_tgz_path : '{{couchdb_lucene_build_dir}}/target/{{couchdb_lucene_install_tgz}}'
+couchdb_lucene_install_dir: '{{couchdb_lucene_parent_install_dir}}/{{couchdb_lucene_name}}'
