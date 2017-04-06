@@ -53,7 +53,7 @@
     - f: log4j.xml
       d: '{{couchdb_lucene_install_dir}}/conf'
       m: '0644'
-    - f: launch-couchdb-lucene.j2
+    - f: launch-couchdb-lucene
       d: '{{couchdb_lucene_parent_install_dir}}/bin'
       m: '0755'
   template:
