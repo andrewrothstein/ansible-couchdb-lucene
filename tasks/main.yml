@@ -29,7 +29,7 @@
 - name: build...
   become: yes
   become_user: root
-  command: mvn
+  command: sh -l -c mvn
   args:
     chdir: '{{couchdb_lucene_build_dir}}'
     creates: '{{couchdb_lucene_install_tgz_path}}'
@@ -49,14 +49,12 @@
   with_items:
     - f: couchdb-lucene.ini
       d: '{{couchdb_lucene_install_dir}}/conf'
-      m: '0644'
     - f: log4j.xml
       d: '{{couchdb_lucene_install_dir}}/conf'
-      m: '0644'
     - f: launch-couchdb-lucene
       d: '{{couchdb_lucene_parent_install_dir}}/bin'
       m: '0755'
   template:
     src: '{{item.f}}.j2'
     dest: '{{item.d}}/{{item.f}}'
-    mode: '{{item.m}}'
+    mode: '{{item.m|default("0644")}}'
