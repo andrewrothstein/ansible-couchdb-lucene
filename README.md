@@ -1,6 +1,6 @@
-[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-couchdb-lucene.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-couchdb-lucene)
 andrewrothstein.couchdb-lucene
 ===========================
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-couchdb-lucene.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-couchdb-lucene)
 
 Installs [CouchDB Lucene](https://github.com/rnewson/couchdb-lucene)
 
