@@ -1,6 +1,6 @@
 ---
 # defaults file for couchdb-lucene
-couchdb_lucene_ver : '2.0.0'
+couchdb_lucene_ver : '2.1.0'
 couchdb_lucene_mirror : 'https://github.com/rnewson/couchdb-lucene/archive'
 
 couchdb_lucene_conf_dir : 'indexes'
