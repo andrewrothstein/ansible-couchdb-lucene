@@ -1,46 +1,40 @@
----
+dependencies:
+- role: andrewrothstein.unarchive-deps
+  version: v1.0.12
+- role: andrewrothstein.python
+  version: v1.0.10
+- role: andrewrothstein.maven
+  version: v2.0.0
 galaxy_info:
   author: Andrew Rothstein
-  description: couchdb-lucene roles
   company: BlackRock
+  description: couchdb-lucene roles
+  galaxy_tags:
+  - development
   license:
-    - MIT
+  - MIT
   min_ansible_version: 2.0
   platforms:
-    - name: Alpine
-      versions:
-        - all
-    - name: Archlinux
-      versions:
-        - all
-    - name: EL
-      versions:
-        - 7
-    - name: Fedora
-      versions:
-        - 23
-        - 24
-        - 25
-        - 26
-    - name: Ubuntu
-      versions:
-        - trusty
-        - xenial
-    - name: Debian
-      versions:
-        - jessie
-        - stretch
-
-  galaxy_tags:
-    - development
-
-dependencies:
-  - src: andrewrothstein.unarchive-deps
-    version: v1.0.10
-  - src: andrewrothstein.python
-    version: v1.0.10
-  - src: andrewrothstein.maven
-    version: v2.0.0
-
-
-  
+  - name: Alpine
+    versions:
+    - all
+  - name: Archlinux
+    versions:
+    - all
+  - name: EL
+    versions:
+    - 7
+  - name: Fedora
+    versions:
+    - 23
+    - 24
+    - 25
+    - 26
+  - name: Ubuntu
+    versions:
+    - trusty
+    - xenial
+  - name: Debian
+    versions:
+    - jessie
+    - stretch
